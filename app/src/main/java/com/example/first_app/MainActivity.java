@@ -3,6 +3,9 @@ package com.example.first_app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 

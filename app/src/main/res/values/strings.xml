@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">First-app</string>
+    <string name="app_name">My-first-app</string>
     <string name="fullname">Андрій Коваль</string>
     <string name="group_name">КП-83</string>
 </resources>
