@@ -39,22 +39,25 @@
                 <Button
                     android:id="@+id/btnNum1"
                     style="@style/calcButton"
+                    android:onClick="onClick1"
                     android:text="1" />
 
                 <Button
                     android:id="@+id/btnNum2"
                     style="@style/calcButton"
+                    android:onClick="onClick2"
                     android:text="2" />
 
                 <Button
                     android:id="@+id/btnNum3"
                     style="@style/calcButton"
+                    android:onClick="onClick3"
                     android:text="3" />
 
                 <Button
                     android:id="@+id/btnOperatorPlus"
                     style="@style/calcButton"
-                    android:shadowColor="@color/colorPrimaryLight"
+                    android:onClick="onPlusClick"
                     android:text="+" />
 
             </TableRow>
@@ -67,21 +70,25 @@
                 <Button
                     android:id="@+id/btnNum4"
                     style="@style/calcButton"
+                    android:onClick="onClick4"
                     android:text="4" />
 
                 <Button
                     android:id="@+id/btnNum5"
                     style="@style/calcButton"
+                    android:onClick="onClick5"
                     android:text="5" />
 
                 <Button
                     android:id="@+id/btnNum6"
                     style="@style/calcButton"
+                    android:onClick="onClick6"
                     android:text="6" />
 
                 <Button
                     android:id="@+id/btnOperatorMinus"
                     style="@style/calcButton"
+                    android:onClick="onMinusClick"
                     android:text="-" />
 
             </TableRow>
@@ -94,21 +101,25 @@
                 <Button
                     android:id="@+id/btnNum7"
                     style="@style/calcButton"
+                    android:onClick="onClick7"
                     android:text="7" />
 
                 <Button
                     android:id="@+id/btnNum8"
                     style="@style/calcButton"
+                    android:onClick="onClick8"
                     android:text="8" />
 
                 <Button
                     android:id="@+id/btnNum9"
                     style="@style/calcButton"
+                    android:onClick="onClick9"
                     android:text="9" />
 
                 <Button
                     android:id="@+id/btnOperatorMultiply"
                     style="@style/calcButton"
+                    android:onClick="onMultClick"
                     android:text="*" />
 
             </TableRow>
@@ -121,21 +132,25 @@
                 <Button
                     android:id="@+id/btnOperatorClear"
                     style="@style/calcButton"
+                    android:onClick="onClearClick"
                     android:text="C" />
 
                 <Button
                     android:id="@+id/btnNum0"
                     style="@style/calcButton"
+                    android:onClick="onClick0"
                     android:text="0" />
 
                 <Button
                     android:id="@+id/btnOperatorEquals"
                     style="@style/calcButton"
+                    android:onClick="onEqualsClick"
                     android:text="=" />
 
                 <Button
                     android:id="@+id/btnOperatorDivide"
                     style="@style/calcButton"
+                    android:onClick="onDivideCLick"
                     android:text="/" />
 
             </TableRow>
@@ -154,5 +169,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.837" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
