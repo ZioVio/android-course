@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Tic tac</string>
+    <string name="tic">❌</string>
+    <string name="tac">◯</string>
+    <string name="select_side">Select tic or tac</string>
+    <string name="tic_tac_placeholder">.</string>
+    <string name="winner_modal_title">Congratulations</string>
+    <string name="winner_modal_text">The winner is</string>
+    <string name="winner_modal_ok_btn">Yeah!</string>
+</resources>

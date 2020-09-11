@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android-course.iml" filepath="$PROJECT_DIR$/.idea/modules/android-course.iml" group="android-course" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tik-tak.iml" filepath="$PROJECT_DIR$/.idea/modules/tik-tak.iml" group="tik-tak" />
     </modules>
   </component>
 </project>
