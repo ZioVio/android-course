@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/colorPrimaryLight"
+    android:paddingLeft="10sp"
+    android:paddingRight="10sp"
+    android:paddingBottom="0sp"
+    tools:context=".MainActivity">
+
+
+    <TableLayout
+        android:id="@+id/tableContainer"
+        android:layout_width="386dp"
+        android:layout_height="371dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.133">
+
+        <TableRow
+            android:id="@+id/row1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button4"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:onClick="onCellClick"
+                android:text="@string/tic_tac_placeholder" />
+
+            <Button
+                android:id="@+id/button3"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:text="@string/tic_tac_placeholder" />
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:text="@string/tic_tac_placeholder" />
+
+            <Button
+                android:id="@+id/button"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:text="@string/tic_tac_placeholder" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button8"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:text="@string/tic_tac_placeholder" />
+
+            <Button
+                android:id="@+id/button7"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:text="@string/tic_tac_placeholder" />
+
+            <Button
+                android:id="@+id/button6"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:text="@string/tic_tac_placeholder" />
+
+            <Button
+                android:id="@+id/button5"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:text="@string/tic_tac_placeholder" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button12"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:text="@string/tic_tac_placeholder" />
+
+            <Button
+                android:id="@+id/button11"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:text="@string/tic_tac_placeholder" />
+
+            <Button
+                android:id="@+id/button10"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:text="@string/tic_tac_placeholder" />
+
+            <Button
+                android:id="@+id/button9"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:text="@string/tic_tac_placeholder" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button16"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:text="@string/tic_tac_placeholder"/>
+
+            <Button
+                android:id="@+id/button15"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:text="@string/tic_tac_placeholder" />
+
+            <Button
+                android:id="@+id/button14"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:text="@string/tic_tac_placeholder" />
+
+            <Button
+                android:id="@+id/button13"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:text="@string/tic_tac_placeholder" />
+        </TableRow>
+
+    </TableLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/select_component"
+        android:layout_width="fill_parent"
+        android:layout_height="157dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/select_tac"
+            style="@style/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/tac"
+            android:onClick="onTac"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.547"
+            app:layout_constraintStart_toEndOf="@+id/select_tic" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/heading2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/select_side"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.087"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/select_tic"
+            style="@style/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="68dp"
+            android:layout_marginLeft="68dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/tic"
+            android:onClick="onTic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

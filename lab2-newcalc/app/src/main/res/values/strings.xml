@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">My-first-app</string>
+    <string name="fullname">Андрій Коваль</string>
+    <string name="group_name">КП-83</string>
+    <string name="first_number_label">First number</string>
+    <string name="second_number_label">Second number</string>
+    <string name="operator_label">Operator</string>
+    <string name="calculate_button">Calculate</string>
+    <string-array name="operators">
+        <item>+</item>
+        <item>-</item>
+        <item>/</item>
+        <item>*</item>
+    </string-array>
+</resources>

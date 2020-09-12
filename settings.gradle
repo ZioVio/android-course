@@ -1,2 +1,1 @@
-include ':app'
-rootProject.name = "First-app"
+rootProject.name = "tik-tak"
