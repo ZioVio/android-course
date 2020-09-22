@@ -16,25 +16,40 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.32"
+            android:text="Button" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.02">
+
+        </RelativeLayout>
+
+        <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.32"
             android:text="Button" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.02">
+
+        </RelativeLayout>
 
         <Button
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.32"
             android:text="Button" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Button" />
     </LinearLayout>
 
     <LinearLayout
@@ -69,14 +84,21 @@
                     android:id="@+id/button5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="0.49"
                     android:text="Button" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_weight="0.02">
+
+                </RelativeLayout>
 
                 <Button
                     android:id="@+id/button4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="0.49"
                     android:text="Button" />
             </LinearLayout>
 
@@ -108,6 +130,13 @@
             android:layout_weight="1"
             android:text="Button" />
 
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.08">
+
+        </RelativeLayout>
+
         <Button
             android:id="@+id/button7"
             android:layout_width="wrap_content"
@@ -115,11 +144,18 @@
             android:layout_weight="1"
             android:text="Button" />
 
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.08">
+
+        </RelativeLayout>
+
         <Button
             android:id="@+id/button8"
-            android:layout_width="164dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_weight="7"
             android:text="Button" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
