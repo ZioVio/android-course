@@ -7,18 +7,48 @@
     android:background="#fff"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button"
-        style="@style/taskbtn"
-        android:layout_width="144dp"
-        android:layout_height="73dp"
-        android:background="@drawable/taskbtn"
-        android:drawableLeft="@android:mipmap/sym_def_app_icon"
-        android:text="Button"
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/button"
+                style="@style/taskbtn"
+                android:layout_width="203dp"
+                android:layout_height="fill_parent"
+                android:layout_centerInParent="true"
+                android:layout_weight="1"
+                android:background="@drawable/taskbtn"
+                android:drawableLeft="@android:mipmap/sym_def_app_icon"
+                android:text="Button" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
