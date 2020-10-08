@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Task 1</string>
+    <string name="title_activity_display_country">Country</string>
+    <string name="population_text">Population: %1$d</string>
+</resources>
