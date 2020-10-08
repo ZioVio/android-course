@@ -8,8 +8,8 @@
 
     <RelativeLayout
         android:id="@+id/relativeLayout1"
-        android:layout_width="0dp"
-        android:layout_height="51dp"
+        android:layout_width="417dp"
+        android:layout_height="46dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,29 +17,35 @@
 
         <Button
             android:id="@+id/button6"
-            android:layout_width="203dp"
-            android:layout_height="47dp"
-            android:layout_alignParentStart="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="1dp"
-            android:layout_marginLeft="1dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="0dp"
-            android:text="Button" />
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toStartOf="@+id/spacer"
+            android:layout_toLeftOf="@+id/spacer"
+            android:text="50%" />
+
+        <Space
+            android:id="@+id/spacer"
+            android:layout_width="15dp"
+
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true" />
 
         <Button
             android:id="@+id/button4"
-            android:layout_width="201dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="0dp"
-            android:layout_marginRight="1dp"
-            android:layout_marginBottom="0dp"
-            android:text="Button" />
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toEndOf="@+id/spacer"
+            android:layout_toRightOf="@+id/spacer"
+            android:text="50%" />
 
     </RelativeLayout>
 
@@ -80,7 +86,6 @@
                 android:text="Center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/button5"
-                app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
