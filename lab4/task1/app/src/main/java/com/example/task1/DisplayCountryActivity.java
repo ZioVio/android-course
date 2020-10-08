@@ -1,6 +1,7 @@
 package com.example.task1;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,6 +28,10 @@ public class DisplayCountryActivity extends AppCompatActivity {
         }
     }
 
+    public void onFinishReading(View v) {
+        this.finish();
+    }
+
     private void initViews() {
         this.nameTextView = findViewById(R.id.country_name);
         this.imageView = findViewById(R.id.country_image);
@@ -45,4 +50,5 @@ public class DisplayCountryActivity extends AppCompatActivity {
     private void setImageFromUrl(ImageView view, String url) {
         // @todo async task
     }
+
 }

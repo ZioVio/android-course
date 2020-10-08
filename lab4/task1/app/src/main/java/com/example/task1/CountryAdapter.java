@@ -33,7 +33,7 @@ public class CountryAdapter extends ArrayAdapter<Country> {
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    openCountruActivity(currentCountry);
+                    openCountryActivity(currentCountry);
                 }
             });
         } else {
@@ -43,7 +43,7 @@ public class CountryAdapter extends ArrayAdapter<Country> {
         return listItemView;
     }
 
-    private void openCountruActivity(Country c) {
+    private void openCountryActivity(Country c) {
         Intent in = new Intent();
         in.setClass(getContext(), DisplayCountryActivity.class);
         in.putExtra(Country.MODEL_INTENT_KEY, c);

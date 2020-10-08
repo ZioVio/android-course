@@ -43,6 +43,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/calcButton"
+                android:onClick="onFinishReading"
+                android:text="@string/finish_reading_text" />
         </LinearLayout>
     </ScrollView>
 

@@ -50,22 +50,5 @@ public class MainActivity extends AppCompatActivity {
         final ArrayList<Country> countriesList = new ArrayList<Country>(Arrays.asList(countries));
         CountryAdapter countryAdapter = new CountryAdapter(this, countriesList);
         container.setAdapter(countryAdapter);
-//        container.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                System.out.println("ITEM " + position);
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//                System.out.println("NOTHING");
-//            }
-//        });
-//        container.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Country c = countriesList.get(position);
-//            }
-//        });
     }
 }
