@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class CountryDetails extends Fragment {
+public class CountryDetailsFragment extends Fragment {
 
     private static final String ARG_PARAM = Country.MODEL_INTENT_KEY;
 
@@ -22,11 +22,11 @@ public class CountryDetails extends Fragment {
     private TextView populationView;
     private TextView descriptionView;
 
-    public CountryDetails() {
+    public CountryDetailsFragment() {
     }
 
-    public static CountryDetails newInstance(Country country) {
-        CountryDetails fragment = new CountryDetails();
+    public static CountryDetailsFragment newInstance(Country country) {
+        CountryDetailsFragment fragment = new CountryDetailsFragment();
         Bundle args = new Bundle();
         args.putSerializable(ARG_PARAM, country);
         fragment.setArguments(args);
@@ -73,7 +73,7 @@ public class CountryDetails extends Fragment {
             finishReadingButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    getFragmentManager().beginTransaction().remove(CountryDetails.this).commit();
+                    getFragmentManager().beginTransaction().remove(CountryDetailsFragment.this).commit();
                 }
             });
         }

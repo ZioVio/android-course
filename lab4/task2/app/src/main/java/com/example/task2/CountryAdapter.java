@@ -3,7 +3,6 @@ package com.example.task2;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +16,6 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 
 public class CountryAdapter extends ArrayAdapter<Country> {
-
-    private FragmentTransaction ft;
 
     public CountryAdapter(Activity ctx, ArrayList<Country> countries) {
         super(ctx, 0, countries);
@@ -52,7 +49,7 @@ public class CountryAdapter extends ArrayAdapter<Country> {
 
     private void openCountryFragment(Country c, @IdRes int parentContainerResId) {
         FragmentTransaction ft = getFragmentTransaction();
-        CountryDetails cdf = CountryDetails.newInstance(c);
+        CountryDetailsFragment cdf = CountryDetailsFragment.newInstance(c);
         ft.replace(parentContainerResId, cdf);
         ft.addToBackStack(null);
         ft.commit();
