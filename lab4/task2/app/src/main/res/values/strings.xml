@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Task 2</string>
+    <string name="title_activity_display_country">Country</string>
+    <string name="population_text">Population: %1$d</string>
+    <string name="finish_reading_text">Finish reading</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
