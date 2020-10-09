@@ -32,18 +32,6 @@ public class MainActivity extends AppCompatActivity {
         };
     }
 
-    private Button[] createButtonsFromCountries(Country[] countries) {
-        Button[] btns = new Button[countries.length];
-
-        for (int i = 0; i < countries.length; i++) {
-            Country c = countries[i];
-            Button btn = new Button(this, null, R.style.calcButton);
-            btn.setText(c.name);
-            btns[i] = btn;
-        }
-
-        return btns;
-    }
 
     private void appendButtons(final Country[] countries) {
         ListView container = findViewById(R.id.countries_container);
