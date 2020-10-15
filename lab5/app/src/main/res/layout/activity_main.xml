@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/inverse_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onInverseClick"
+            android:text="@string/inverse_button" />
+
+        <Button
+            android:id="@+id/one_color_adjustment_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="@string/adjust_one_color_button" />
+
+        <Button
+            android:id="@+id/split_into_three_colors_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/red_green_blue_button" />
+
+        <Button
+            android:id="@+id/combine_two_images_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/combine_images_button" />
+
+        <Button
+            android:id="@+id/matrix_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/matrix_filters_button" />
+
+        <Button
+            android:id="@+id/watermark_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/watermark_button" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

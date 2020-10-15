@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Lab5 - Andrii Koval</string>
+    <string name="inverse_button">1. Inverse</string>
+    <string name="adjust_one_color_button">2. One color adjustment</string>
+    <string name="red_green_blue_button">3. Split image into red, green and blue</string>
+    <string name="combine_images_button">4. Combine 2 images</string>
+    <string name="matrix_filters_button">5. Image matrix manipulation</string>
+    <string name="watermark_button">6. Watermark manipulation</string>
+</resources>
