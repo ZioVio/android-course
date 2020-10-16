@@ -29,6 +29,7 @@ public class InverseImageActivity extends AppCompatActivity {
         Bitmap dstBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         dstBitmap.setPixels(dstPixels, 0, width, 0, 0, width, height);
         dstImageView.setImageBitmap(dstBitmap);
+        src.recycle();
     }
 
     private void invertPixels(int[] src, int[] dst) {
