@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplitIntoColorsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/image_name"
+                android:text="@string/original_image" />
+
+            <ImageView
+                android:id="@+id/src"
+                android:layout_width="match_parent"
+                android:layout_height="265dp"
+                app:srcCompat="@mipmap/android_foreground" />
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/image_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/red_image" />
+
+            <ImageView
+                android:id="@+id/redImage"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                app:srcCompat="@mipmap/android_foreground" />
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/image_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/green_image" />
+
+            <ImageView
+                android:id="@+id/greenImage"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                app:srcCompat="@mipmap/android_foreground" />
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/image_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/blue_image" />
+
+            <ImageView
+                android:id="@+id/blueImage"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                app:srcCompat="@mipmap/android_foreground" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

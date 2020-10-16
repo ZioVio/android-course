@@ -43,6 +43,16 @@ public class MainActivity extends AppCompatActivity {
         startCertainActivity(in, OneColorAdjustmentActivity.class);
     }
 
+    public void onSplitIntoColorsClick(View v) {
+        Intent in = new Intent();
+        startCertainActivity(in, SplitIntoColorsActivity.class);
+    }
+
+    public void onCombineImagesClicked(View v) {
+        Intent in = new Intent();
+        startCertainActivity(in, CombineImagesActivity.class);
+    }
+
     private void startCertainActivity(Intent in, Class<?> cls) {
         in.setClass(this, cls);
         startActivity(in);

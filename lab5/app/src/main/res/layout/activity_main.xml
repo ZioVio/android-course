@@ -34,12 +34,14 @@
             android:id="@+id/split_into_three_colors_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onSplitIntoColorsClick"
             android:text="@string/red_green_blue_button" />
 
         <Button
             android:id="@+id/combine_two_images_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onCombineImagesClicked"
             android:text="@string/combine_images_button" />
 
         <Button

@@ -9,4 +9,8 @@
     <string name="red_check">Red</string>
     <string name="green_check">Green</string>
     <string name="blue_check">Blue</string>
+    <string name="original_image">Original</string>
+    <string name="red_image">Red</string>
+    <string name="green_image">Green</string>
+    <string name="blue_image">Blue</string>
 </resources>
