@@ -26,6 +26,7 @@
             android:id="@+id/one_color_adjustment_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@string/adjust_one_color_button"
             tools:text="@string/adjust_one_color_button" />
 
         <Button
