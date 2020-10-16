@@ -35,7 +35,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void onInverseClick(View v) {
         Intent in = new Intent();
-        in.setClass(this, InverseImageActivity.class);
+        startCertainActivity(in, InverseImageActivity.class);
+    }
+
+    public void onOneColorAdjustmentClick(View v) {
+        Intent in = new Intent();
+        startCertainActivity(in, OneColorAdjustmentActivity.class);
+    }
+
+    private void startCertainActivity(Intent in, Class<?> cls) {
+        in.setClass(this, cls);
         startActivity(in);
     }
 

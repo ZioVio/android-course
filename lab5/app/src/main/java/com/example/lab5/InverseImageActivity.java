@@ -34,11 +34,11 @@ public class InverseImageActivity extends AppCompatActivity {
 
     private void invertPixels(int[] src, int[] dst) {
         for (int i = 0; i < src.length; i++) {
-            Color srcColor = new Color(src[i]);
+            MyColor srcColor = new MyColor(src[i]);
             int newR = 255 - srcColor.getR();
             int newG = 255 - srcColor.getG();
             int newB = 255 - srcColor.getB();
-            dst[i] = new Color(newR, newG, newB).toInt();
+            dst[i] = new MyColor(newR, newG, newB).toInt();
         }
     }
 }

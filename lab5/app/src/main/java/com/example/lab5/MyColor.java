@@ -1,11 +1,12 @@
 package com.example.lab5;
 
-public class Color {
+
+public class MyColor {
 
     private int _r, _g, _b;
     private int _alpha;
 
-    public Color(int r, int g, int b) {
+    public MyColor(int r, int g, int b) {
         // do not perform any checks for simplification
         this._r = r;
         this._g = g;
@@ -13,19 +14,19 @@ public class Color {
         this._alpha = 255;
     }
 
-    public Color(int r, int g, int b, int alpha) {
+    public MyColor(int r, int g, int b, int alpha) {
         this(r, g, b);
         this._alpha = alpha;
     }
 
-    public Color(int srcColor) {
+    public MyColor(int srcColor) {
         this(((srcColor & 0x00ff0000) >> 16),
             ((srcColor & 0x0000ff00) >> 8),
             (srcColor & 0x000000ff),
-            srcColor & 0xff000000);
+            srcColor & 0xff000000 >> 24);
     }
 
-    public Color(Color src) {
+    public MyColor(MyColor src) {
         this(src.getR(), src.getG(), src.getB(), src.getAlpha());
     }
 
@@ -51,18 +52,27 @@ public class Color {
 
 
     public void setAlpha(int alpha) {
-        this._alpha = alpha;
+        this._alpha = trimToByteBounds(alpha);
     }
 
     public void setR(int r) {
-        this._r = r;
+        this._r = trimToByteBounds(r);
     }
 
     public void setG(int g) {
-        this._g = g;
+        this._g = trimToByteBounds(g);
     }
 
     public void setB(int b) {
-        this._b = b;
+        this._b = trimToByteBounds(b);
+    }
+
+    private int trimToByteBounds(int value) {
+        if (value > 255) {
+            value = 255;
+        } else if (value < 0) {
+            value = 0;
+        }
+        return value;
     }
 }

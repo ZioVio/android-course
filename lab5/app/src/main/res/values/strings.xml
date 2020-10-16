@@ -6,4 +6,7 @@
     <string name="combine_images_button">4. Combine 2 images</string>
     <string name="matrix_filters_button">5. Image matrix manipulation</string>
     <string name="watermark_button">6. Watermark manipulation</string>
+    <string name="red_check">Red</string>
+    <string name="green_check">Green</string>
+    <string name="blue_check">Blue</string>
 </resources>
