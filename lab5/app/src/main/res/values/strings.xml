@@ -13,4 +13,11 @@
     <string name="red_image">Red</string>
     <string name="green_image">Green</string>
     <string name="blue_image">Blue</string>
+    <string name="filter_blur">Blur</string>
+    <string name="filter_sharpness">Sharp</string>
+    <string name="filter_median">Median</string>
+    <string name="filter_erosion_and_growth">Erosion and growth</string>
+    <string name="filter_sobel">Sobel</string>
+    <string name="encode">Encode string and get key</string>
+    <string name="decode">Decode image and get secret</string>
 </resources>

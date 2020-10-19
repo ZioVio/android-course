@@ -1,29 +1,30 @@
 package com.example.lab5;
 
 
+import android.util.Log;
+
 public class MyColor {
 
     private int _r, _g, _b;
     private int _alpha;
 
     public MyColor(int r, int g, int b) {
-        // do not perform any checks for simplification
-        this._r = r;
-        this._g = g;
-        this._b = b;
+        this._r = trimToByteBounds(r);
+        this._g = trimToByteBounds(g);
+        this._b = trimToByteBounds(b);
         this._alpha = 255;
     }
 
     public MyColor(int r, int g, int b, int alpha) {
         this(r, g, b);
-        this._alpha = alpha;
+        this._alpha = trimToByteBounds(alpha);
     }
 
     public MyColor(int srcColor) {
-        this(((srcColor & 0x00ff0000) >> 16),
-            ((srcColor & 0x0000ff00) >> 8),
-            (srcColor & 0x000000ff),
-            srcColor & 0xff000000 >> 24);
+        this((((srcColor & 0x00ff0000) >> 16) & 0x000000ff),
+                (((srcColor & 0x0000ff00) >> 8) & 0x000000ff),
+                (srcColor & 0x000000ff),
+                ((srcColor & 0xff000000) >> 24) & 0x000000ff);
     }
 
     public MyColor(MyColor src) {

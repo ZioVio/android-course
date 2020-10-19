@@ -53,6 +53,16 @@ public class MainActivity extends AppCompatActivity {
         startCertainActivity(in, CombineImagesActivity.class);
     }
 
+    public void onGoToMatrices(View v) {
+        Intent in = new Intent();
+        startCertainActivity(in, MatrixManipulationActivity.class);
+    }
+
+    public void onGoToWatermarkActivity(View v) {
+        Intent in = new Intent();
+        startCertainActivity(in, WatermarkActivity.class);
+    }
+
     private void startCertainActivity(Intent in, Class<?> cls) {
         in.setClass(this, cls);
         startActivity(in);

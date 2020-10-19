@@ -48,12 +48,14 @@
             android:id="@+id/matrix_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onGoToMatrices"
             android:text="@string/matrix_filters_button" />
 
         <Button
             android:id="@+id/watermark_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onGoToWatermarkActivity"
             android:text="@string/watermark_button" />
     </LinearLayout>
 
