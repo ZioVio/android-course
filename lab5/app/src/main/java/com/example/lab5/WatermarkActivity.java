@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,7 +27,6 @@ public class WatermarkActivity extends AppCompatActivity {
     private EditText keyEditText;
     private EditText secretEditText;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,9 +45,7 @@ public class WatermarkActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     String secret = getSecretFromInput();
-                    System.out.println("SECRET " + secret);
                     String key = generateKeyForSecret(secret);
-                    System.out.println("KEY " + key);
                     keyEditText.setText(key);
                     if (key.isEmpty() || secret.isEmpty()) {
                         return;
@@ -62,11 +61,11 @@ public class WatermarkActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     String key = getKeyFromInput();
-                    System.out.println("KEY " + key);
-                    watermarkedImageView.buildDrawingCache();
-                    Bitmap bitmap = watermarkedImageView.getDrawingCache();
+//                    watermarkedImageView.setDrawingCacheEnabled(true);
+//                    Bitmap bitmap = watermarkedImageView.getDrawingCache();
+                    Bitmap bitmap = ((BitmapDrawable)watermarkedImageView.getDrawable()).getBitmap();
                     String secret = getSecret(bitmap, key);
-                    System.out.println("SECRET " + secret);
+                    Log.e("SECRET result", secret);
                     secretEditText.setText(secret);
                 }
             });
@@ -91,17 +90,31 @@ public class WatermarkActivity extends AppCompatActivity {
         int[] watermarkedPixels = new int[width * height];
         src.getPixels(watermarkedPixels, 0, width, 0, 0, width, height);
         String secretBinary = stringToBinary(secret);
-        System.out.println(secretBinary);
         String keyBinary = stringToBinary(key);
 
-        for (int i = 0; i < key.length(); i++) {
+        for (int i = 0; i < keyBinary.length(); i++) {
             int secretBit = Integer.parseInt(String.valueOf(secretBinary.charAt(i)));
+//            Log.e("LOG", "secretBit " + secretBit + " watermarkedPixels[i] " + Integer.toBinaryString(watermarkedPixels[i]) + " keyBinary.charAt(i) " + keyBinary.charAt(i));
+//            Log.e("BEFORE", Integer.toBinaryString(watermarkedPixels[i]));
             if (keyBinary.charAt(i) == '0') {
-                watermarkedPixels[i] += secretBit;
+                if (watermarkedPixels[i] % 2 == 0) {
+                    watermarkedPixels[i] |= secretBit;
+                } else {
+                    watermarkedPixels[i] += watermarkedPixels[i] & secretBit;
+                }
             } else {
-                watermarkedPixels[i] += (secretBit << 1);
+                if ((watermarkedPixels[i] >> 1) % 2 == 0) {
+                    watermarkedPixels[i] |= secretBit << 1;
+                } else {
+                    watermarkedPixels[i] = (((watermarkedPixels[i] >> 1) & (secretBit)) << 1) + 1;
+                }
             }
+//            Log.e("AFTER", Integer.toBinaryString(watermarkedPixels[i]));
         }
+
+//        for (int watermarkedPixel : watermarkedPixels) {
+//            Log.e("watermarkedPixel", Integer.toBinaryString(watermarkedPixel) + "");
+//        }
 
         watermarked.setPixels(watermarkedPixels, 0, width, 0, 0, width, height);
         return watermarked;
@@ -114,16 +127,13 @@ public class WatermarkActivity extends AppCompatActivity {
         bitmap.getPixels(buffer, 0, width, 0, 0, width, height);
 
         String keyBinary = stringToBinary(key);
-        System.out.println("KEY BINARY " + keyBinary);
         StringBuilder resultBinary = new StringBuilder();
 
         for (int i = 0; i < keyBinary.length(); i++) {
             int secretBit = keyBinary.charAt(i) == '0' ? buffer[i] & 1 : ((buffer[i] & 0b10) >> 1);
-            System.out.println("SECRET BIT " + secretBit + " index" + i);
             resultBinary.append(secretBit == 1 ? "1" : "0");
         }
 
-        System.out.println(resultBinary.toString());
         return binaryStringToNormal(resultBinary.toString());
     }
 

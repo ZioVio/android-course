@@ -1,8 +1,6 @@
 package com.example.lab5;
 
 
-import android.util.Log;
-
 public class MyColor {
 
     private int _r, _g, _b;

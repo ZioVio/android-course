@@ -195,7 +195,33 @@ public class MatrixManipulationActivity extends AppCompatActivity {
         };
 
         Bitmap horizontallyDone = applyMatrix(horizontalMatrix, bitmap, defaultMatrixManipulator, true);
-        Bitmap finalResult = applyMatrix(verticalMatrix, horizontallyDone, defaultMatrixManipulator, false);
+        Bitmap verticallyDone = applyMatrix(verticalMatrix, bitmap, defaultMatrixManipulator, false);
+        int width = horizontallyDone.getWidth();
+        int height = horizontallyDone.getHeight();
+        Bitmap finalResult = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        // will use this as a buffer for memory economy
+        int[] horizontalPixels = new int[width * width];
+        //
+        int[] verticalPixels = new int[horizontalPixels.length];
+
+        horizontallyDone.getPixels(horizontalPixels, 0, width, 0, 0, width, height);
+        verticallyDone.getPixels(verticalPixels, 0, width, 0, 0, width, height);
+
+
+        // copied from prev task
+        float alpha = .5f;
+        //
+
+        for (int i = 0; i < horizontalPixels.length; i++) {
+            MyColor color1 = new MyColor(horizontalPixels[i]);
+            MyColor color2 = new MyColor(verticalPixels[i]);
+            int r = (int)(color1.getR() * alpha + (1 - alpha) * color2.getR());
+            int g = (int)(color1.getG() * alpha + (1 - alpha) * color2.getG());
+            int b = (int)(color1.getB() * alpha + (1 - alpha) * color2.getB());
+            horizontalPixels[i] = new MyColor(r, g, b).toInt();
+        }
+
+        finalResult.setPixels(horizontalPixels, 0, width, 0, 0, width, height);
         return finalResult;
     }
 
