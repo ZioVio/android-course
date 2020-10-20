@@ -1,6 +1,5 @@
 package com.example.lab5;
 
-import androidx.annotation.IdRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Bitmap;
@@ -14,7 +13,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import java.math.BigInteger;
-import java.nio.charset.Charset;
 import java.util.Random;
 
 public class WatermarkActivity extends AppCompatActivity {
@@ -23,6 +21,7 @@ public class WatermarkActivity extends AppCompatActivity {
     private Bitmap srcImageBitmap;
 
     private ImageView watermarkedImageView;
+    private Bitmap watermarkedBitmap;
 
     private EditText keyEditText;
     private EditText secretEditText;
@@ -50,8 +49,8 @@ public class WatermarkActivity extends AppCompatActivity {
                     if (key.isEmpty() || secret.isEmpty()) {
                         return;
                     }
-                    Bitmap bitmap = makeWatermarkedImage(srcImageBitmap, secret, key);
-                    watermarkedImageView.setImageBitmap(bitmap);
+                    watermarkedBitmap = makeWatermarkedImage(srcImageBitmap, secret, key);
+                    watermarkedImageView.setImageBitmap(watermarkedBitmap);
                 }
             });
         }
@@ -63,9 +62,8 @@ public class WatermarkActivity extends AppCompatActivity {
                     String key = getKeyFromInput();
 //                    watermarkedImageView.setDrawingCacheEnabled(true);
 //                    Bitmap bitmap = watermarkedImageView.getDrawingCache();
-                    Bitmap bitmap = ((BitmapDrawable)watermarkedImageView.getDrawable()).getBitmap();
-                    String secret = getSecret(bitmap, key);
-                    Log.e("SECRET result", secret);
+//                    Bitmap bitmap = ((BitmapDrawable)watermarkedImageView.getDrawable()).getBitmap();
+                    String secret = getSecret(watermarkedBitmap, key);
                     secretEditText.setText(secret);
                 }
             });
@@ -94,8 +92,6 @@ public class WatermarkActivity extends AppCompatActivity {
 
         for (int i = 0; i < keyBinary.length(); i++) {
             int secretBit = Integer.parseInt(String.valueOf(secretBinary.charAt(i)));
-//            Log.e("LOG", "secretBit " + secretBit + " watermarkedPixels[i] " + Integer.toBinaryString(watermarkedPixels[i]) + " keyBinary.charAt(i) " + keyBinary.charAt(i));
-//            Log.e("BEFORE", Integer.toBinaryString(watermarkedPixels[i]));
             if (keyBinary.charAt(i) == '0') {
                 if (watermarkedPixels[i] % 2 == 0) {
                     watermarkedPixels[i] |= secretBit;
@@ -109,12 +105,7 @@ public class WatermarkActivity extends AppCompatActivity {
                     watermarkedPixels[i] = (((watermarkedPixels[i] >> 1) & (secretBit)) << 1) + 1;
                 }
             }
-//            Log.e("AFTER", Integer.toBinaryString(watermarkedPixels[i]));
         }
-
-//        for (int watermarkedPixel : watermarkedPixels) {
-//            Log.e("watermarkedPixel", Integer.toBinaryString(watermarkedPixel) + "");
-//        }
 
         watermarked.setPixels(watermarkedPixels, 0, width, 0, 0, width, height);
         return watermarked;
