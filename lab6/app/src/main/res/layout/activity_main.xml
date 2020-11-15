@@ -18,14 +18,23 @@
         <Button
             android:id="@+id/animations_button"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:onClick="onAnimationsClick"
-            android:layout_height="wrap_content"/>
+            android:text="@string/animations_button" />
 
         <Button
             android:id="@+id/circling_square_button"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:onClick="onCirclingSquareAClick"
-            android:layout_height="wrap_content"/>
+            android:text="@string/circling_square_button" />
+
+        <Button
+            android:id="@+id/cellular_automata_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onCellularAutomataClick"
+            android:text="@string/cellular_automata_button" />
 
     </LinearLayout>
 

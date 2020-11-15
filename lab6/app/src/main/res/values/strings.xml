@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">lab6</string>
+    <string name="animations_button">Animations</string>
+    <string name="circling_square_button">Circling square</string>
+    <string name="cellular_automata_button">Cellular automata</string>
 </resources>

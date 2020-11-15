@@ -24,6 +24,11 @@ public class MainActivity extends AppCompatActivity {
         startCertainActivity(in, CirclingSquareActivity.class);
     }
 
+    public void onCellularAutomataClick(View v) {
+        Intent in = new Intent();
+        startCertainActivity(in, CellularAutomataActivity.class);
+    }
+
     private void startCertainActivity(Intent in, Class<?> cls) {
         in.setClass(this, cls);
         startActivity(in);
