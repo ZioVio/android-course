@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">mkr</string>
+    <string name="astroida_button">Task 1</string>
+    <string name="image_fading_button">Task 2</string>
+</resources>
