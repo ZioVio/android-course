@@ -57,7 +57,6 @@ public class CellularAutomata {
             for (int j = i; j < conditionLength + i; j++) {
                 condition[j - i] = this.cells[this.step][j];
             }
-//            Log.e("condition", " " + condition[0] + " " + condition[1] + " " + condition[2] + " ");
             for (ConditionCell conditionCell : this.conditionCells) {
                 if (conditionCell.conditionMatches(condition)) {
                     this.cells[this.step + 1][i + (int)Math.floor(conditionLength / 2.0)] = conditionCell.cell;

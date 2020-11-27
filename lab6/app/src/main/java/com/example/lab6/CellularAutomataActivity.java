@@ -57,11 +57,6 @@ public class CellularAutomataActivity extends AppCompatActivity {
                 }
             }
             invalidate();
-//            ca.draw(canvas, paint);
-//            if (!ca.update()) {
-//                ca.reset();
-//            }
-//            invalidate();
         }
 
         private CellularAutomata[] createAutomatas(float width, float height) {
